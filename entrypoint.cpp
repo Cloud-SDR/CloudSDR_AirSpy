@@ -216,6 +216,7 @@ LIBRARY_API int initLibrary(char *json_init_params,
           airspy_set_samplerate( device, tmp->current_sample_rate );
           airspy_set_freq( device, tmp->center_frq_hz);
           airspy_set_packing( device, 1 ); // use packing
+		  airspy_set_sample_type( device, AIRSPY_SAMPLE_FLOAT32_IQ);
           // create waiting thread for this device
           pthread_create(&tmp->receive_thread, NULL, acquisition_thread, tmp );
 

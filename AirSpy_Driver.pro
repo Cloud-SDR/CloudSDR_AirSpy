@@ -36,9 +36,10 @@ TARGET = CloudSDR_AirSpy
 TEMPLATE = lib
  
 LIBS += -lpthread  
+LIBS += -lusb-1.0
+
 win32 {
-    DESTDIR = C:/SDRNode/addons
-    LIBS += -lusb-1.0
+    DESTDIR = C:/SDRNode/addons    
     RC_FILE = resources.rc
 }
 
@@ -64,7 +65,6 @@ SOURCES += \
     iqconverter_int16.c
 
 HEADERS +=\
-    external_hardware_def.h \
     entrypoint.h \
     jansson/hashtable.h \
     jansson/jansson.h \
